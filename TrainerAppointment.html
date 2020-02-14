@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+ <script>
+  
+  function frm(){
+    var tbClients = localStorage.getItem("tbClients1");//Retrieve the stored data 
+    tbClients = JSON.parse(tbClients); //Converts string to object 
+    if(tbClients == null) //If there is no data, initialize an empty array
+     tbClients = [];
+
+    var name=document.getElementById("fName").value;
+    
+    var add=document.getElementById("street").value;
+    
+    var cty=document.getElementById("city").value;
+
+    var pac=document.getElementById("inr").value;
+   
+    var phone=document.getElementById("phone").value;
+    
+var costomer=JSON.stringify({'fName':name,'street':add,'city':cty,'inr':pac,'phone':phone});
+alert(costomer);
+tbClients.push(costomer);
+localStorage.setItem("tbClients1", JSON.stringify(tbClients));
+
+return true;
+
+  }
+  
+     function cal() {
+                document.getElementById('inr').value = 500;
+                document.getElementById('paisa').value=00;
+              }
+              function cacl() {
+                document.getElementById('inr').value = 1600;
+                document.getElementById('paisa').value=00;
+              }
+              function caclcu() {
+                document.getElementById('inr').value = 3600;
+                document.getElementById('paisa').value=00;
+              }
+  </script>
+
+  <style>
+    body{
+      background-size: cover;
+      color: white;
+    }
+  </style>
+</head>
+<body  style="background-image: url(https://thirdstreetsouth.com/wp-content/uploads/2018/01/yoga-beach-sunset_cropped.jpg);">
+
+  <div class="container-fluid">          
+  <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRHvZfmXmIoefF-4_Y181mv8GoPQeaeW-s2YOsJMAGOqa-aIEEg"  class="rounded-circle float-left" alt="Fitness" width="75" height="75" align="middle"></p>
+</div>
+
+<br><br><br><br>
+<nav class="navbar navbar-expand-sm bg-dark">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link text-white"  href="project.html">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="TrainerAppointment.html">PLACE APPOINTMENT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="viewAppointment.html">VIEW APPOINTMENT</a>
+    </li>
+<li class="nav-item">
+      <a class="nav-link text-white" href="contactus.html">CONTACT US</a>
+    </li>
+  </ul>
+</nav>  
+<style>
+.sidenav {
+  height: 300%;
+  width: 180px;
+  position: absolute;
+  z-index: 1;
+  top:167px;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+}s
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+[class*="col-"]{
+width:100%;
+}
+@media only screen and (min-width:600px){
+.col-lg-2{width:25%}
+.col-lg-4{width:30%}
+.col-lg-6{width:50%}
+.col-lg-8{width:60%}
+.col-lg-12{width:70%}
+@media screen and (max-height: 750px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.center {
+padding-top:80px;
+padding-left:250px;
+}
+.center1
+{
+padding-top:50px;
+padding-left:200px;
+}
+</style>
+<div class="sidenav">
+  <a class="text-white" href="Fit.html" target="Fit.html ">HOME</a><br>
+
+  <a class="text-white"href="TrainerAppointment.html" target="TrainerAppointment.html">PLACE APPOINTMENT</a>
+ 
+ <a class="text-white"class="text-white"href="viewAppointment.html" target="viewAppointment.html">VIEW APPOINTMENT</a>
+  <a class="text-white"href="contactus.html" target="contactus.html">CONTACT US</a>
+</div>
+<br>
+<br>
+</style>s
+<div class="container">
+    <div class="row">
+     <div class="col-lg-2"></div>
+     <div class="col-lg-8"><div>
+      <h2 style="text-align: center;">Place Fitness Trainer Appointment</h2><br>
+<form action="viewAppointment.html" onsubmit="return frm();">
+        <div class="row">
+          <div class="col-lg-6">   
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="name" class="form-control" pattern="[a-zA-Z]+" id="fName" placeholder="Enter First Name" autofocus required>
+        </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" id="lName" pattern="[a-zA-Z]+" placeholder="Enter Last Name" name="pwd" required>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">  
+        <label>Age :</label>
+            <input type="text" class="form-control" id="pwd" placeholder="Select Date of Birth" name="dob" pattern="[0-9]+" required maxlength="2" minlength="1"></div>
+          <div class="col-lg-4"> 
+            <label>Email :</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+            </div>
+            <div class="col-lg-4">
+              <label>Contact Number :</label>
+              <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter Contact Number" pattern="[0-9]+" required maxlength="10" minlength="10">
+            </div>
+            
+            </div>
+            <br>
+            <div class="row">
+              <label style="text-align: center;">Address :</label>
+             
+              <input type="text" class="form-control" id="street" placeholder="Enter Street Address" name="street" required>
+              <br><label>Street Address</label>
+              <div class="row">
+                <div class="col-lg-4">
+                  <input type="text" class="form-control" id="city" pattern="[a-zA-Z]+" placeholder="Enter City" name="city" required>
+                  <label>City</label>
+          
+                  </div>
+                  <div class="col-lg-4">
+                    <input type="text" class="form-control" pattern="[a-zA-Z]+" id="State" placeholder="Enter State" name="state" required>
+                    <label>State</label>
+                    </div>
+                    <div class="col-lg-4">
+
+                      <select class="form-control" id="sel1" required>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>UK</option>
+                        <option>Europe</option>
+                      </select>
+                      <label>Country</label>
+                </div> 
+                <div class="row">
+                  <div class="col-lg-12">
+                <input type="text" class="form-control" id="pin" placeholder="Enter Pincode" pattern="[0-9]+" required minlength="6" maxlength="6">
+                <label>Pincode</label>
+              </div>
+              </div>
+            </div>
+        <div id="trainerPreference">
+          <label>Trainer Preference :</label>
+          <div class="radio">
+            <label><input type="radio" name="trainer" checked>Male Trainer</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="trainer">Female Trainer</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="trainer">No Preference</label>
+          </div>
+          <div class="radio">
+            <div class="row">
+              <div class="col-lg-12">
+            <label class="radio-inline"><input type="radio" name="trainer" onclick="myFunction()">Trainer Name : </label><input type="text" id="tname" class="form-control" placeholder="Enter Trainer Name">
+            </div></div>
+            <script>
+              function myFunction() {
+                var x = document.getElementById("tname");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              }
+              </script>
+           
+          </div>
+          <div class="radio">
+            <div class="row">
+              <div class="col-lg-12">
+            <label><input type="radio" name="trainer" onclick="otherFunction()">Others</label><input type="text" id="others" class="form-control" placeholder="Other Trainers">
+            </div></div>
+            <script>
+              function otherFunction() {
+                var x = document.getElementById("others");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              }
+              </script>
+          </div>
+        
+
+          <label>Do you need physiotherapist</label><br>
+          <label class="radio-inline">
+            <input type="radio" name="need" checked>Yes
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="need">No
+          </label>
+<br>
+          <br><label>Appointment: (Free)</label>
+          <table class="table table-bordered "style="color:white">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>7am to 9am</th>
+                <th>9am to 11am</th>
+                <th>11am to 1pm</th>
+                <th>1pm to 3pm</th>
+                <th>3pm to 5pm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Monday</th>
+                <td><input type="radio" name="Monday"> 1</td>
+                <td><input type="radio" name="Monday"> 2</td>
+                <td><input type="radio" name="Monday"> 3</td>
+                <td><input type="radio" name="Monday"> 4</td>
+                <td><input type="radio" name="Monday"> 5</td>
+              </tr>
+              <tr>
+                <th>Tuesday</th>
+                <td><input type="radio" name="Tuesday"> 1</td>
+                <td><input type="radio" name="Tuesday"> 2</td>
+                <td><input type="radio" name="Tuesday"> 3</td>
+                <td><input type="radio" name="Tuesday"> 4</td>
+                <td><input type="radio" name="Tuesday"> 5</td>
+              </tr>
+              <tr>
+                <th>Wednesday</th>
+                <td><input type="radio" name="Wednesday"> 1</td>
+                <td><input type="radio" name="Wednesday"> 2</td>
+                <td><input type="radio" name="Wednesday"> 3</td>
+                <td><input type="radio" name="Wednesday"> 4</td>
+                <td><input type="radio" name="Wednesday"> 5</td>
+              </tr>
+              <tr>
+                <th>Thrusday</th>
+                <td><input type="radio" name="Thrusday">1</td>
+                <td><input type="radio" name="Thrusday">2</td>
+                <td><input type="radio" name="Thrusday">3</td>
+                <td><input type="radio" name="Thrusday">4</td>
+                <td><input type="radio" name="Thrusday">5</td>
+              </tr>
+              <tr>
+                <th>Friday</th>
+                <td><input type="radio" name="Friday">1</td>
+                <td><input type="radio" name="Friday">2</td>
+                <td><input type="radio" name="Friday">3</td>
+                <td><input type="radio" name="Friday">4</td>
+                <td><input type="radio" name="Friday">5</td>
+              </tr>
+              <tr>
+                <th>Saturday</th>
+                <td><input type="radio" name="Saturday">1</td>
+                <td><input type="radio" name="Saturday">2</td>
+                <td><input type="radio" name="Saturday">3</td>
+                <td><input type="radio" name="Saturday">4</td>
+                <td><input type="radio" name="Saturday">5</td>
+              </tr>
+              <tr>
+                <th>Sunday</th>
+                <td><input type="radio" name="sanday">1</td>
+                <td><input type="radio" name="sanday">2</td>
+                <td><input type="radio" name="sanday">3</td>
+                <td><input type="radio" name="sanday">4</td>
+                <td><input type="radio" name="sanday">5</td>
+              </tr>
+            </tbody>
+          </table>
+          <label>Select Package :</label>
+          <div class="radio">
+            <label><input type="radio" name="package" onclick="cal()">One time Assesment only (INR 500)</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="package" onclick="cacl()">4 Weekly Sessions (INR 400/session)</label>
+            
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="package" onclick="caclcu()">12 Weekly Sessions (INR 300/session)</label>
+           
+          </div>
+          <div class="radio">
+            <div class="row">
+              <div class="col-lg-8">
+            <label class="radio-inline"><input type="radio" name="package" onclick="myFun()">Others : </label><div id="oth"><input type="text" id="other" class="form-control" placeholder="Enter Trainer Name"><label>Quote will be shared on phone call</label></div>
+            </div></div>
+            <script>
+              function myFun() {
+                var x = document.getElementById("oth");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              }
+              </script>
+           
+          </div>
+          </div>
+          
+          <div class="row">
+           <label>quote:</label>
+            <div class="col-lg-3">  
+            
+          <div class="form-group">
+            <input type="text" class="form-control" id="inr">
+            <label>INR</label>
+          </div>
+          </div><br><br><br><br>
+          <div class="col-lg-3">
+            <div class="form-group">
+              
+              <input type="text" class="form-control" id="paisa">
+            
+              <label>Paisa</label></div>
+          </div>
+          </div>
+  </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+</div>
+
+  
+      </form>
+     </div></div>
+      <div class="col-lg-2"></div>
+    </div>
+    
+      </div>
+</body>
+
+</html>

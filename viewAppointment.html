@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>VIEW APPOINTMENT</title>
+
+    <style>
+        table {
+            width: 70%;
+            font: 17px Calibri;
+        }
+        table, th, td {
+            border: solid 1px rgb(37, 8, 8);
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+.sidenav {
+  height: 400%;
+  width: 180px;
+  position: absolute;
+  z-index: 1;
+  top:0px;
+  left: 15px;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+}s
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 200px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.center {
+padding-top:80px;
+padding-left:250px;
+}
+        body{
+            background-size: cover;
+	  background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+  <div class="container-fluid">          
+  <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRHvZfmXmIoefF-4_Y181mv8GoPQeaeW-s2YOsJMAGOqa-aIEEg"  class="rounded-circle float-left" alt="Fitness" width="75" height="75" align="middle"></p>
+</div>
+
+<h2 style="text-align: center;">Appointment Details</h2>
+ 
+</body>
+<br><br>
+<body  style="background-image: url(https://thirdstreetsouth.com/wp-content/uploads/2018/01/yoga-beach-sunset_cropped.jpg);">
+
+<nav class="navbar navbar-expand-sm bg-dark">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link text-white"  href="project.html">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="TrainerAppointment.html">PLACE APPOINTMENT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="viewAppointment.html">VIEW APPOINTMENT</a>
+    </li>
+<li class="nav-item">
+      <a class="nav-link text-white" href="contactus.html">CONTACT US</a>
+    </li>
+  </ul>
+</nav>
+<div class="row">
+<div class="col-lg-2">
+<div class="sidenav">
+  <a class="text-white" href="Fit.html" target="Fit.html ">HOME</a><br>
+
+  <a class="text-white"href="TrainerAppointment.html" target="TrainerAppointment.html">PLACE APPOINTMENT</a>
+ 
+ <a class="text-white"class="text-white"href="viewAppointment.html" target="viewAppointment.html">VIEW APPOINTMENT</a>
+  <a class="text-white"href="contactus.html" target="contactus.html">CONTACT US</a>
+</div>
+</div>
+
+
+
+ <form action="index.html">   
+<div class="container">
+<br>
+<br>
+   <table class="table"  id="tblList" style="color:white">
+      <thead>
+        <tr>
+          
+          <th>Name</th>
+          <th>Add</th>
+          <th>City</th>
+          <th>Packege</th>
+          <th>Trainer Preference</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+         
+          <td id="n"></td>
+          <td id="a"></td>
+          <td id="c"></td>
+          <td id="p"></td>
+          <td id="tp"></td>
+          <td id="phn"></td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <script>
+ var tbClients = localStorage.getItem("tbClients1");//Retrieve the stored data 
+    tbClients = JSON.parse(tbClients); //Converts string to object 
+    if(tbClients == null) //If there is no data, initialize an empty array
+     tbClients = [];
+                
+               
+                $("#tblList").html(""); $("#tblList").html( "<thead>"+ " <tr>"+ " <th>Name</th>"+ " <th>Address</th>"+ " <th>city</th>"+" <th>Package</th>"+ " <th>contact</th>"+ " </tr>"+ "</thead>"+ "<tbody>"+ "</tbody>" ); 
+                for(var i in tbClients){ var cli = JSON.parse(tbClients[i]); $("#tblList tbody").append("<tr>" + " <td>"+cli.fName+"</td>" + " <td>"+cli.street+"</td>" + " <td>"+cli.city+"</td>" +" <td>"+cli.inr+"</td>" + " <td>"+cli.phone+"</td>" + "</tr>"); }
+
+        </script>
+
+       <button type="submit" class="btn btn-success"><a href="project.html">Submit</a></button>
+        </form> 
+</html>
